@@ -1,0 +1,18 @@
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+{% for vlog in vlogs.all %}
+    <a href="{% url 'update' vlog.id %}"><span>수정</span></a>
+    <a href="{% url 'delete' vlog.id %}"><span>삭제</span></a>
+    <h1><a href="{% url 'detail' vlog.id %}">{{vlog.titlee}}</a></h1>
+{% endfor %}
+<img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20131108_26%2Fghdrl7979_1383899158254lih7f_PNG%2F14.png&type=sc960_832" width="100" height="100">
+   <br>
+    
+   <a href="{% url 'create' %}">♡♡create new♡♡</a>
+
+</body>
